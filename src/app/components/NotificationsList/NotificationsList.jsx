@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NotificationsListItem from './d-notifications-list-item';
+import NotificationsListItem from './NotificationsListItem';
 
 
 class NotificationsList extends Component {

@@ -1,5 +1,5 @@
 import React from "react";
-import TaskDetails from "./d-task-details"
+import TaskDetails from "../TaskDetails/TaskDetails"
 
 
 const ContentRight = (props) => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import TaskList from './d-task-list';
-import GoogleCalendar from './d-google-calendar';
-import NotificationsList from './d-notifications-list'
+import TaskList from '../TaskList/TaskList';
+import GoogleCalendar from '../GoogleCalendar/GoogleCalendar';
+import NotificationsList from '../NotificationsList/NotificationsList'
  
 
 import {

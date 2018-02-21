@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SideBar from '../d-sidebar';
-import MainContent from '../d-maincontent';
+import SideBar from '../SideBar/SideBar';
+import MainContent from '../MainContent/MainContent';
 
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectListItem from './d-project-list-item';
+import ProjectListItem from './ProjectListItem';
 
 const ProjectList = (props) => {
 	return(
