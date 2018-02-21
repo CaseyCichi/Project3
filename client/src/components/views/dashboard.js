@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SideBar from '../d-sidebar';
+import SideBar from '..//Sidebar/d-sidebar';
 import MainContent from '../d-maincontent';
 
 

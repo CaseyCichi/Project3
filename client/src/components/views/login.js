@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LoginContent from '../l-login-content';
+import LoginContent from '../Login/l-login-content';
 
 class Login extends Component {
 render() {

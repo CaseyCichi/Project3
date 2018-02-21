@@ -1,6 +1,6 @@
 import React from "react";
-import ContentLeft from './d-content-left';
-import ContentRight from './d-content-right';
+import ContentLeft from './Navbar/Content/d-content-left';
+import ContentRight from './Navbar/Content/d-content-right';
 
 
 const Content = (props) => {

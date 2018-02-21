@@ -1,6 +1,6 @@
 import React from "react";
-import TopNav from './d-topnav';
-import TaskBar from './d-taskbar';
+import TopNav from '../components/Navbar/Task/d-topnav';
+import TaskBar from '../components/Navbar/Task/d-taskbar';
 import Content from './d-content';
 
 

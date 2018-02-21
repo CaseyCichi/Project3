@@ -13,7 +13,7 @@ import Login from './components/views/login';
 class App extends Component {
   render() {
     return (
-         <div id="whole-page-container" className="wrapper">
+         <div>
           <Route exact path="/" component={Home}/>
           <Route path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login}/>
