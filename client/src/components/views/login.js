@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import LoginContent from '../l-login-content';
 
 class Login extends Component {
 render() {
     return (
-      <div className="Login">
-        This is the login page!!
+      <div id="splash-page-container" className="wrapper">
+        <LoginContent />
       </div>
     );
   }

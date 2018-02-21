@@ -72,7 +72,7 @@ class AddTaskForm extends React.Component {
       		</div>
         	<a data-toggle="collapse" href="#task-due-date" role="button" aria-expanded="false" aria-controls="collapseExample">Due Date</a>
         	<div className="collapse" id="task-due-date">
-              	<div className="">
+              	<div>
 	                <div className="form-group">
 	                	<input type="date" name="taskDate" value={this.state.taskDate} onChange={this.handleChange} className="form-control" />
 	                </div>
@@ -80,7 +80,7 @@ class AddTaskForm extends React.Component {
         	</div>
        		<a data-toggle="collapse" href="#task-attachment" role="button" aria-expanded="false" aria-controls="collapseExample">Attachment</a>
         	<div className="collapse" id="task-attachment">
-              	<div className="">
+              	<div>
 	                <div className="form-group">
 	                	<input
 				            type="file"

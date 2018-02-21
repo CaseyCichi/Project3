@@ -1,18 +1,27 @@
-import React from "react";
+import React, { Component } from 'react';
 
 
-const NotificationsListItem = (props) => {
+class NotificationsListItem extends Component {
+	constructor(props){
+		super();
+		this.state = {notifs: ['Notification One', 'Notification Two']}
+	}
+	componentWillMount(){
+		{/*Add connection to db here to pull in task items
 
-	return(
-		<li>
-		
-		{/*Also need to add notification date to left of each li item*/}
-		<a href="">Notifications Example 1</a>
-		</li>
-	);
-};
-
-
+		fetch('')
+		.then( response => response.json() )
+		.then( ({results: notifs}) => this.setState({notifs}))*/}
+	}
+	render(){
+		let notifs = this.state.notifs
+		return (
+			<div>
+				{notifs.map(notif => <li key={notif.toString()}>{notif}</li>)}
+			</div>
+		)
+	}
+}
 
 
 export default NotificationsListItem;

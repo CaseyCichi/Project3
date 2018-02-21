@@ -12,7 +12,7 @@ import {
 class Dashboard extends Component {
 render() {
     return (
-      <div className='Dashboard'>
+      <div id="whole-page-container" className="wrapper">
 		<div className='row no-gutters'>
 			<SideBar />
 			<MainContent />

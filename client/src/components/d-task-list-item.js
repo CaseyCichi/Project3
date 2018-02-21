@@ -1,21 +1,27 @@
-import React from "react";
+import React, { Component } from 'react';
 
 
-const TaskListItem = (props) => {
+class TaskListItem extends Component {
+	constructor(props){
+		super();
+		this.state = {items: []}
+	}
+	componentWillMount(){
+		{/*Add connection to db here to pull in task items
 
-	return(
-		<li>
-		
-		{/*Need to set this up so that it brings in all li items and when
-		li is clicked we have a on click that triggers 2nd column to open*/}
-
-		{/*Also need to add completed checkbox to left of each li item*/}
-		<a href="">Task Example 1</a>
-		</li>
-	);
-};
-
-
+		fetch('')
+		.then( response => response.json() )
+		.then( ({results: items}) => this.setState({items}))*/}
+	}
+	render(){
+		let items = this.state.items
+		return (
+			<div>
+				{items.map(item => <li key={item.toString()}>{item}</li>)}
+			</div>
+		)
+	}
+}
 
 
 export default TaskListItem;

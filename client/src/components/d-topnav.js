@@ -1,6 +1,8 @@
 import React from "react";
 import PlusSign from 'react-icons/lib/fa/plus-circle';
 import UserIcon from 'react-icons/lib/fa/user';
+import ProjectListItem from './d-project-list-item';
+
 
 import {
   NavLink,
@@ -27,8 +29,7 @@ const TopNav = (props) => {
 				Projects
 				</a>
 				<div className="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a className="dropdown-item" href="#">Projects Here</a>
-					<div className="dropdown-divider"></div>
+					<ProjectListItem />
 				</div>
 				</li>
 				<li className="dropdown">

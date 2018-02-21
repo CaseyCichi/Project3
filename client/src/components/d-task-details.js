@@ -1,11 +1,14 @@
-import React from "react";
+import React, { Component } from 'react';
 import CalendarIcon from 'react-icons/lib/fa/calendar';
 import PaperclipIcon from 'react-icons/lib/fa/paperclip';
+import ProjectName from './d-project-name';
+import TaskDesc from './d-task-desc';
+import TaskAttachments from './d-task-attachments';
+
+class TaskDetails extends Component {
 
 
-
-const TaskDetails = (props) => {
-
+	render(){
 	return(
 		<div id="task-pane">
 		<div id="add-task">
@@ -14,7 +17,8 @@ const TaskDetails = (props) => {
 				<li>User Name Here</li>
 
 				<li className="">
-				<CalendarIcon size={23} color={'#605ca9'}/><input type="date" className="task-date form-control" name="dueDate2" data-placeholder="Due Date" required aria-required="true" />
+				<CalendarIcon size={23} color={'#605ca9'}/>
+				<input type="date" name="dueDate"  className="task-date form-control" />
 				</li>
 				
 				<li className="file-chooser">
@@ -25,16 +29,11 @@ const TaskDetails = (props) => {
 		</div>
 		<div className="task-details-content p-3">
 
-			{/*Break out below into component */}
-			<h3 className="dk-blue-header">Project Name Here</h3>
+			<ProjectName />
 			
-			{/*Break out below into component */}
-			<p>Project Details here</p>
-			<hr />
+			<TaskDesc />
 
-			{/*Break out below into component */}
-			<p>Project attachments here</p>
-			<hr />
+			<TaskAttachments />
 
 			{/*Break out below into component */}
 			<ul>
@@ -54,6 +53,7 @@ const TaskDetails = (props) => {
 		</div>
 	);
 };
+}
 
 
 
