@@ -1,9 +1,9 @@
-import Comment from '../models';
+import Comment from '../models/comment';
 import * as msg from './errors';
 
 let response = (status, data) => ({ 'success': status, 'message': (status ? msg.SUCCESS : msg.ERROR), data });
 
-export const getComments = (req,res) => {
+export const all = (req,res) => {
   Comment.find({}).exec((err, comments) => {
     if (err) {
       console.log(err);
@@ -16,7 +16,7 @@ export const getComments = (req,res) => {
 }
 
 
-export const addComment = (req,res) => {
+export const add = (req,res) => {
   console.log(req.body);
   const newComment = new Comment(req.body);
   newComment.save((err, comment) => {
@@ -28,7 +28,7 @@ export const addComment = (req,res) => {
   })
 }
 
-export const updateComment = (req,res) => {
+export const update = (req,res) => {
   Comment.findOneAndUpdate({ _id:req.body.id }, req.body, { new:true }, (err,comment) => {
     if (err) {
       console.log(err);
@@ -39,7 +39,19 @@ export const updateComment = (req,res) => {
   });
 }
 
-export const getComment = (req,res) => {
+
+export const remove = (req,res) => {
+  Comment.findByIdAndRemove(req.params.id, (err, comment) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json(response(false));
+    }
+    return res.status(200).json(response(true));
+  });
+}
+
+
+export const findOne = (req,res) => {
   Comment.find({_id:req.params.id}).exec((err,comment) => {
     if (err) {
       console.log(err);
@@ -51,12 +63,10 @@ export const getComment = (req,res) => {
   })
 }
 
-export const deleteComment = (req,res) => {
-  Comment.findByIdAndRemove(req.params.id, (err, comment) => {
-    if (err) {
-      console.log(err);
-      return res.status(500).json(response(false));
-    }
-    return res.status(200).json(response(true));
-  });
-}
+export default {
+  all,
+  findOne,
+  add,
+  update,
+  remove
+};

@@ -3,7 +3,9 @@ import project from './project';
 import task from './task';
 import user from './user';
 
-export { 
+export { comment, project, task, user };
+
+export default { 
   comment,
   project,
   task,

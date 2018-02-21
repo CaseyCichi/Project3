@@ -1,0 +1,60 @@
+#comments {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin: 0px;
+  padding: 0px 10px;
+  z-index: 4;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  #comments {
+    width: 300px;
+  }
+}
+
+#comments .comment {
+  position: relative;
+  background: #5dc9f3;
+  color: #fafafa;
+  padding: 10px 10px 10px 30px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  cursor: default;
+}
+
+#comments .comment.success {
+  background: #b8e986;
+  color: #222;
+}
+
+#comments .comment.success .close {
+  background: #abe570;
+  color: #222;
+}
+
+#comments .comment.error {
+  background: #d0021b;
+}
+
+#comments .comment.error .close {
+  background: #b70218;
+}
+
+#comments .comment .close {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 20px;
+  padding: 0px;
+  background: #45c1f1;
+  color: #fafafa;
+  border: 0px;
+  border-radius: 3px 0px 0px 3px;
+  cursor: pointer;
+}

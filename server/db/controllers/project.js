@@ -3,7 +3,7 @@ import * as msg from './errors';
 
 let response = (status, data) => ({ 'success': status, 'message': (status ? msg.SUCCESS : msg.ERROR), data });
 
-export const getProjects = (req,res) => {
+export const all = (req,res) => {
   Project.find({}).exec((err, projects) => {
     if (err) {
       console.log(err);
@@ -16,7 +16,7 @@ export const getProjects = (req,res) => {
 }
 
 
-export const addProject = (req,res) => {
+export const add = (req,res) => {
   console.log(req.body);
   const newProject = new Project(req.body);
   newProject.save((err, project) => {
@@ -28,7 +28,7 @@ export const addProject = (req,res) => {
   })
 }
 
-export const updateProject = (req,res) => {
+export const update = (req,res) => {
   Project.findOneAndUpdate({ _id:req.body.id }, req.body, { new:true }, (err,project) => {
     if (err) {
       console.log(err);
@@ -39,7 +39,7 @@ export const updateProject = (req,res) => {
   });
 }
 
-export const getProject = (req,res) => {
+export const findOne = (req,res) => {
   Project.find({_id:req.params.id}).exec((err,project) => {
     if (err) {
       console.log(err);
@@ -51,7 +51,7 @@ export const getProject = (req,res) => {
   })
 }
 
-export const deleteProject = (req,res) => {
+export const remove = (req,res) => {
   Project.findByIdAndRemove(req.params.id, (err,Project) => {
     if (err) {
       console.log(err);
@@ -60,3 +60,11 @@ export const deleteProject = (req,res) => {
     return res.status(200).json(response(true));
   });
 }
+
+export default {
+  all,
+  findOne,
+  add,
+  update,
+  remove
+};

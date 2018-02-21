@@ -1,14 +1,30 @@
 {
   "name": "owlist",
   "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/frunks/owlist#readme",
+  "bugs": {
+    "url": "https://github.com/frunks/owlist/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frunks/owlist.git"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.15.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "mocha ./src/utils/**/*-test.js",
     "eject": "react-scripts eject",
     "serve": "NODE_ENV=development node server/index.js",
     "deploy": "NODE_ENV=production node server/index.js",
-    "dev": "NODE_ENV=development node server/index.js react-scripts start"
+    "dev": "concurrently \"NODE_ENV=development node server/index.js\" \"react-scripts start\""
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -22,6 +38,7 @@
     "express-flash": "0.0.2",
     "express-session": "^1.15.6",
     "helmet": "^3.11.0",
+    "history": "^4.7.2",
     "ignore-styles": "^5.0.1",
     "install": "^0.10.4",
     "method-override": "^2.3.10",
@@ -44,23 +61,6 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "debug": "~2.6.9",
-    "jade": "~1.11.0",
-    "mongojs": "^2.5.0",
-    "serve-favicon": "~2.4.5"
-  },
-  "description": "",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/frunks/owlist.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/frunks/owlist/issues"
-  },
-  "homepage": "https://github.com/frunks/owlist#readme"
+    "redux-thunk": "^2.2.0"
+  }
 }

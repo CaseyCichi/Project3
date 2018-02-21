@@ -19,7 +19,7 @@ export function logout(req, res) {
   res.sendStatus(200);
 }
 
-export function register(req, res, next) {
+export const register = (req, res, next) => {
   const user = new User({
     email: req.body.email,
     password: req.body.password
