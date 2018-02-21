@@ -4,6 +4,9 @@ import PaperclipIcon from 'react-icons/lib/fa/paperclip';
 import ProjectName from './d-project-name';
 import TaskDesc from './d-task-desc';
 import TaskAttachments from './d-task-attachments';
+import Comments from './d-comments';
+import AddCommentForm from './d-add-comment-form';
+
 
 class TaskDetails extends Component {
 
@@ -35,19 +38,13 @@ class TaskDetails extends Component {
 
 			<TaskAttachments />
 
-			{/*Break out below into component */}
 			<ul>
-				<li>show comments that have been made here</li>
+				<Comments />
 			</ul>
-
-
 		</div>
 		<div className="comment-section p-3">
-			{/*Break out below into component */}
-			<form>
-			<textarea className="form-control" id="taskDescriptionTextarea2" placeholder="Write a comment..." rows="3"></textarea>
-			 <button type="submit" className="btn btn-primary full-width">Submit</button>
-            </form>
+
+			<AddCommentForm />
 		</div>
 
 		</div>
