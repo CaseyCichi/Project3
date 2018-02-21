@@ -3,10 +3,9 @@ import { withRouter } from 'react-router';
 import Helmet from 'react-helmet';
 
 const defaultUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'null';
-const defaultTitle = 'SSR Website';
-const defaultDescription = 'Here is a pretty awesome meta tag description for my website.';
+const defaultTitle = 'Owlist!';
+const defaultDescription = 'It's a Hoot;
 const defaultImage = `${defaultUrl}/images/logo.jpg`;
-const defaultTwitter = '@cereallarceny';
 const defaultSep = ' | ';
 
 class Page extends Component {

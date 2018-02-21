@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import SideBar from '../d-sidebar';
 import MainContent from '../d-maincontent';
 
-import { Route, Switch } from 'react-router-dom';
+
 
 class Dashboard extends Component {
-  render() {
+render() {
     return (
-      <div className="Dashboard">
-        <div className="row no-gutters">
+      <div id="whole-page-container" className="wrapper">
+        <div className='row no-gutters'>
           <SideBar />
           <MainContent />
         </div>
