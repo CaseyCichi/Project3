@@ -35,6 +35,8 @@ function deleteCalendar(auth, idOfCalendar) {
     headers: {
       Authorization: "Bearer " + auth.credentials.access_token
     }
+  }).then((res, err) => {
+    console.log(res);
   })
 }
 
