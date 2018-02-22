@@ -22,9 +22,9 @@ export default () => {
       url: `/task/${id}`,
       data
     }),
-    add: ({ data }) => client.request({
+    add: ({ id, data }) => client.request({
       method: 'POST',
-      url: `/task`,
+      url: `/task/${id}`,
       data
     })
   };

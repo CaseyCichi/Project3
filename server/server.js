@@ -10,4 +10,3 @@ connect();
 initPassport();
 initApp(app);
 initRoutes(app);
-app.get('*', universalLoader);

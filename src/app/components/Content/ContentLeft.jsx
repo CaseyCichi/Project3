@@ -9,7 +9,7 @@ const ContentLeft = (props) => {
 	return(
 		<section id="main-content-left" className="col mt-4">
 		<Switch>
-			<Route path="/dashboard" component={TaskList}/>
+			<Route path="/tasks" component={TaskList}/>
 			<Route path="/dashboard/notifications" component={NotificationsList}/>
 			<Route path="/dashboard/calendar" component={GoogleCalendar}/>
        	</Switch>

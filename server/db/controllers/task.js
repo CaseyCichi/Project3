@@ -18,7 +18,11 @@ export const all = (req,res) => {
 
 export const add = (req,res) => {
   console.log(req.body);
-  const newTask = new Task(req.body);
+  const newTask = new Task({
+    taskName: req.body.taskName,
+    taskDesc: req.body.taskDesc,
+    taskDate: req.body.taskDate
+  });
   newTask.save((err, task) => {
     if (err) {
       console.log(err);
