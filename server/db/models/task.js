@@ -2,10 +2,11 @@ import mongoose from 'mongoose';
 import Comment from './comment';
 
 const TaskSchema = new mongoose.Schema({
-  title: String,
-  text: String,
-  assignedById: String,
-  assignedToId: String,
+  taskName: String,
+  taskDesc: String,
+  taskDate: String
+  // assignedById: String,
+  // assignedToId: String,
   // comments: [Comment]
 }, {
   timestamps: true

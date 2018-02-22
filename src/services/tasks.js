@@ -1,25 +1,30 @@
-import { apiEndpoint } from '../../config/app';
-import createRestApiClient from '../utils/createRestApiClient';
+// import { apiEndpoint } from '../../config/app';
+import createRestApiClient from '../utils/api';
+const apiEndpoint = 'http://localhost:3000';
 
 export default () => {
   const client = createRestApiClient().withConfig({ baseURL: apiEndpoint });
   return {
-    getTopics: () => client.request({
+    all: () => client.request({
       method: 'GET',
-      url: '/topic'
+      url: '/task'
     }),
-    deleteTopic: ({ id }) => client.request({
+    remove: ({ id }) => client.request({
       method: 'DELETE',
-      url: `/topic/${id}`
+      url: `/task/${id}`
     }),
-    updateTopic: ({ id, data }) => client.request({
+    findOne: ({ id }) => client.request({
+      method: 'GET',
+      url: `/task/${id}`
+    }),
+    update: ({ id, data }) => client.request({
       method: 'PUT',
-      url: `/topic/${id}`,
+      url: `/task/${id}`,
       data
     }),
-    createTopic: ({ id, data }) => client.request({
+    add: ({ data }) => client.request({
       method: 'POST',
-      url: `/topic/${id}`,
+      url: `/task`,
       data
     })
   };
