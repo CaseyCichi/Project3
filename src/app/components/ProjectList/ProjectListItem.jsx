@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class ProjectListItem extends Component {
 	constructor(props){
 		super();

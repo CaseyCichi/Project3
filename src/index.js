@@ -6,8 +6,9 @@ import { ConnectedRouter } from 'react-router-redux';
 import store, { history } from './store';
 import registerServiceWorker from './registerServiceWorker';
 
-import App from './app';
-import './index.css';
+import App from './app/App';
+import './style.css';
+
 
 render(
   <Provider store={store}>
@@ -15,7 +16,7 @@ render(
       <Route component={App} />
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('app-content')
 );
 
 registerServiceWorker();

@@ -248,7 +248,7 @@ ul.modal-list li:first-child {
 }
 
 .navbar-brand {
-	background: url(../images/owlist-logo.png);
+	background: url(./images/owlist-logo.png);
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 24px;
@@ -348,7 +348,7 @@ ul#task-details li {
 }
 
 #login-logo {
-	background: url(../images/login-logo.png);
+	background: url(./images//login-logo.png);
 	background-repeat: no-repeat;
 	width: 150px;
 	height: 125px;
@@ -434,13 +434,13 @@ footer {
 (min-resolution: 192dpi) { 
     /* Retina-specific stuff here */
 	.navbar-brand {
-	background: url(../images/owlist-logo@2x.png);
+	background: url(./images//owlist-logo@2x.png);
 	background-size: 100%;
     background-repeat: no-repeat;
 	}
 
 	#login-logo {
-	background: url(../images/login-logo@2x.png);
+	background: url(./images//login-logo@2x.png);
 	background-size: 100%;
     background-repeat: no-repeat;
 	}

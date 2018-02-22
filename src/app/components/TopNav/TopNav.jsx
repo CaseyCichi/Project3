@@ -2,16 +2,10 @@ import React from "react";
 import PlusSign from 'react-icons/lib/fa/plus-circle';
 import UserIcon from 'react-icons/lib/fa/user';
 import ProjectListItem from '../ProjectList/ProjectList';
-
-
-import {
-  NavLink,
-} from 'react-router-dom'
-
-
+import { NavLink } from 'react-router-dom'
+import './style.css';
 
 const TopNav = (props) => {
-
 	return(
 		<section id="top-nav-bar">
 			<nav className="navbar navbar-expand-lg navbar-light">
@@ -61,7 +55,6 @@ const TopNav = (props) => {
 			</ul>
 			</div>
 			</nav>
-			
 		</section>
 	);
 };
