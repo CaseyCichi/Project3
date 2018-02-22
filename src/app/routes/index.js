@@ -7,21 +7,16 @@ import AboutPage from './AboutPage';
 import LoginPage from './LoginPage';
 import OopsPage from './OopsPage';
 import * as PrivateRoute from './Private';
+import Dashboard from './Dashboard';
 
-// const Routes = ({ loggedIn }) => {
 export default () => {
   return (
-    <Switch>
-      <Route exact path="/" component={Homepage} />
-      <Route exact path="/about" component={AboutPage} />
-      {/* <PrivateRoute path="/login" component={LoginPage} loggedIn={ loggedIn } /> */}
+<div>
+      <Route  path="/" component={Homepage} />
+      <Route  path="/about" component={AboutPage} />
+      <Route  path="/dashboard" component={Dashboard}/>
+      {/* <Route exact path="/login" component={LoginPage}/> */}
       <Route component={OopsPage} />
-    </Switch>
+      </div>    
   );
 };
-
-// const mapStateToProps = state => ({
-//   loggedIn: state.user.loggedIn,
-// });
-
-// export default connect(mapStateToProps, null)(Routes);

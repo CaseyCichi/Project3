@@ -5,12 +5,12 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import createServerStore from './store';
-import App from '../src/app';
+import App from '../src/app/App';
 
 const prepHTML = (data, { html, head, body }) => {
   data = data.replace('<html lang="en">', `<html ${html}`);
   data = data.replace('</head>', `${head}</head>`);
-  data = data.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+  data = data.replace('<div id="app-content"></div>', `<div id="app-content">${body}</div>`);
   return data;
 };
 

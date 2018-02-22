@@ -1,7 +1,5 @@
 import React from "react";
 
-import { NavLink } from 'react-router-dom'
-
 class GoogleCalendar extends React.Component {
 
 	constructor(props) {
@@ -30,7 +28,6 @@ class GoogleCalendar extends React.Component {
             
         )}
 };
-
 
 
 
