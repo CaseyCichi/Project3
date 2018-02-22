@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import Helmet from 'react-helmet';
 
-const defaultUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'null';
-const defaultTitle = 'Owlist!';
-const defaultDescription = "It's a Hoot";
+const defaultUrl = (process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'null');
+const defaultTitle = 'Owlist';
+const defaultDescription = 'Hooty Hoot';
 const defaultImage = `${defaultUrl}/images/logo.jpg`;
+const defaultTwitter = '';
 const defaultSep = ' | ';
 
 class Page extends Component {
@@ -61,4 +62,5 @@ class Page extends Component {
     );
   }
 }
+
 export default withRouter(Page);
