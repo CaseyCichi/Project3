@@ -1,7 +1,7 @@
 import React from "react";
 import TopNav from '../TopNav/TopNav';
 import TaskBar from '../TaskBar/TaskBar';
-import Content from './Content/Content';
+import Content from '../Content/Content';
 
 const MainContent = (props) => {
 
