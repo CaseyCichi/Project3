@@ -4,7 +4,8 @@
 /node_modules
 
 # secrets
-/server/config/googleSecrets
+/server/config/googleSecrets/calendar-node-quickstart.json
+/server/config/googleSecrets/client-secret.json
 
 # testing
 /coverage
