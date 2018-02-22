@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import CalendarIcon from 'react-icons/lib/fa/calendar';
 import PaperclipIcon from 'react-icons/lib/fa/paperclip';
-import ProjectName from './d-project-name';
-import TaskDesc from './d-task-desc';
-import TaskAttachments from './d-task-attachments';
-import Comments from './d-comments';
-import AddCommentForm from './d-add-comment-form';
+import ProjectName from '../ProjectName/ProjectName';
+import TaskDesc from '../TaskDesc/TaskDesc';
+import TaskAttachments from '../TaskAttachments/TaskAttachments';
+import Comments from '../Comments/Comments';
+import AddCommentForm from '../AddCommentForm/AddCommentForm';
 
 
 class TaskDetails extends Component {

@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 const ProjectSchema = new mongoose.Schema({
     title: String,
     text: String,
+    googleid: String,
     // tasks: [Task],
     users: {
       type: mongoose.Schema.Types.ObjectId,

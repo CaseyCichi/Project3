@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectList from './d-project-list'
+import ProjectList from '../ProjectList/ProjectList'
 
 
 const SideBar = (props) => {

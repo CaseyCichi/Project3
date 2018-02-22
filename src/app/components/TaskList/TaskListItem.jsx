@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NoTaskImg from '../images/no-tasks-img.png';
 
 
+
 class TaskListItem extends Component {
 	constructor(props){
 		super();

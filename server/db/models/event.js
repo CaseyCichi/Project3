@@ -4,6 +4,7 @@ import mongooseDelete from 'mongoose-delete';
 const EventSchema = new mongoose.Schema({
   title: String,
   text: String,
+  googleid: String,
 }, {
   timestamps: true
 });

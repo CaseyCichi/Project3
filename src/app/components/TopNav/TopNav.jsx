@@ -1,7 +1,7 @@
 import React from "react";
 import PlusSign from 'react-icons/lib/fa/plus-circle';
 import UserIcon from 'react-icons/lib/fa/user';
-import ProjectListItem from './d-project-list-item';
+import ProjectListItem from '../ProjectList/ProjectList';
 
 
 import {
