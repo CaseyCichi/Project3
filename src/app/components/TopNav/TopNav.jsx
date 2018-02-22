@@ -3,7 +3,6 @@ import PlusSign from 'react-icons/lib/fa/plus-circle';
 import UserIcon from 'react-icons/lib/fa/user';
 import ProjectListItem from '../ProjectList/ProjectList';
 import { NavLink } from 'react-router-dom'
-import './style.css';
 
 const TopNav = (props) => {
 	return(

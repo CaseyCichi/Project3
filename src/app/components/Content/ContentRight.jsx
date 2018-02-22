@@ -1,7 +1,6 @@
 import React from "react";
 import TaskDetails from "../TaskDetails/TaskDetails"
 
-import './style.css';
 const ContentRight = (props) => {
 
 	return(

@@ -2,7 +2,7 @@ import React from "react";
 import TopNav from '../TopNav/TopNav';
 import TaskBar from '../TaskBar/TaskBar';
 import Content from '../Content/Content';
-import './style.css';
+
 const MainContent = (props) => {
 	return(
 		<div className="col-sm-12 col-md-10 col-lg-10">

@@ -1,5 +1,5 @@
 // Ignore those pesky styles
-// require('ignore-styles');
+require('ignore-styles');
 
 // Set up babel to do its thing... env for the latest toys, react-app for CRA
 require('babel-register')({

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NoTaskImg from '../../../images/no-tasks-img.png';
-import './style.css';
 
 class TaskListItem extends Component {
 	constructor(props){
