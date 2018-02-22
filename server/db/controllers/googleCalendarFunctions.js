@@ -12,18 +12,16 @@ module.exports = {
   editEvent,
 }
 
-function editEvent(auth, idOfCalendar, idOfEvent) {
-  axios.patch("https://www.googleapis.com/calendar/v3/calendars/" + idOfCalendar + "/events/" + idOfEvent, {}, {
+function editEvent(auth, idOfCalendar, idOfEvent, Events) {
+  axios.patch("https://www.googleapis.com/calendar/v3/calendars/" + idOfCalendar + "/events/" + idOfEvent, {resource: Events}, {
     headers: {
       Authorization: "Bearer " + auth.credentials.access_token
     }
   })
 }
 
-function deleteEvent(auth, idOfCalendar, idOfEvent, eventToChange) {
+function deleteEvent(auth, idOfCalendar, idOfEvent) {
   axios.delete("https://www.googleapis.com/calendar/v3/calendars/" + idOfCalendar + "/events/" + idOfEvent, {
-    resource: eventToChange
-  }, {
     headers: {
       Authorization: "Bearer " + auth.credentials.access_token
     }
