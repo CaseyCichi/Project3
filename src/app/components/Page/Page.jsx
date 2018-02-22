@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 const defaultUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'null';
 const defaultTitle = 'Owlist!';
-const defaultDescription = 'It's a Hoot;
+const defaultDescription = "It's a Hoot";
 const defaultImage = `${defaultUrl}/images/logo.jpg`;
 const defaultSep = ' | ';
 
