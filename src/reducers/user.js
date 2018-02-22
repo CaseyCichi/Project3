@@ -15,9 +15,9 @@ const message = (state = '', action) => {
     case USER_TYPE.TOGGLE_LOGIN_MODE:
     case USER_TYPE.MANUAL_LOGIN_USER:
     case USER_TYPE.SIGNUP_USER:
+    case USER_TYPE.SIGNUP_SUCCESS_USER:
     case USER_TYPE.LOGOUT_USER:
     case USER_TYPE.LOGIN_SUCCESS_USER:
-    case USER_TYPE.SIGNUP_SUCCESS_USER:
       return '';
     case USER_TYPE.LOGIN_ERROR_USER:
     case USER_TYPE.SIGNUP_ERROR_USER:

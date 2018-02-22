@@ -1,11 +1,8 @@
-import connect from './connect';
-import controllers from './controllers';
-import passport from './passport';
-import session from './session';
+import * as mongo from './mongo'
 
-export default {
-  connect,
-  controllers,
-  passport,
-  session
-};
+let dbConfig = mongo.default
+
+export const connect = dbConfig.connect;
+export const controllers = dbConfig.controllers;
+export const passport = dbConfig.passport;
+export const session = dbConfig.session;

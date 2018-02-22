@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './comments.css';
+// import './comments.css';
 
 const Comment = props => (
   <li className={'comment ' + (props.type || 'primary')}>

@@ -57,7 +57,7 @@ export function logOut() {
       });
   };
 
-  function beginLogout() { return { type: USER_TYPE.LOGOUT_USER } }
+  function beginLogout() { return { type: USER_TYPE.LOGIN_SUCCESS_USER } }
   function logoutSuccess() { return { type: USER_TYPE.LOGOUT_SUCCESS_USER } }
   function logoutError() { return { type: USER_TYPE.LOGOUT_ERROR_USER } }
 }

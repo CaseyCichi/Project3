@@ -4,6 +4,8 @@ import Comments from './Comment';
 import Page from './Page';
 import SideBar from './SideBar';
 import MainContent from './MainContent';
+import Container from './Container';
+import Messages from './Messages';
 
 export {
   Login,
@@ -11,7 +13,9 @@ export {
   Comments,
   Page,
   SideBar,
-  MainContent
+  MainContent,
+  Container,
+  Messages
 };
 
 export default {
@@ -20,5 +24,7 @@ export default {
   Comments,
   Page,
   SideBar,
-  MainContent
+  MainContent,
+  Container,
+  Messages
 };

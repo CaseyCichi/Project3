@@ -3,6 +3,7 @@ import universalLoader from '../universal';
 
 const router = express.Router();
 
-router.get('/', universalLoader);
+router.route('/')
+      .get(universalLoader);
 
 export default router;

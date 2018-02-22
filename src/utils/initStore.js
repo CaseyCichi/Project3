@@ -7,7 +7,10 @@ const initStore = (initialState, history) => {
   const enhancers = [];
   const middleware = [thunk, routerMiddleware(history)];
 
-  if (process.env.NODE_ENV === 'development' && typeof devToolsExtension === 'function') {
+  if (process.env.NODE_ENV === 'development' 
+     && typeof window === 'object' 
+     && typeof window.devToolsExtension !== 'undefined' ) 
+  {
     enhancers.push(window.devToolsExtension());
   }
   

@@ -1,17 +1,16 @@
 import passport from 'passport';
-
 import { controllers, passport as passportConfig } from '../db';
 
-const userController = controllers && controllers.user;
+const usersController = controllers && controllers.user;
 const commentController = controllers && controllers.comments;
 const taskController = controllers && controllers.task;
 const projectController = controllers && controllers.project;
 
 export default (app) => {
-  if (userController) {
-    app.post('/sessions', userController.login);
-    app.post('/users', userController.signUp);
-    app.delete('/sessions', userController.logout);
+  if (usersController) {
+    app.post('/sessions', usersController.login);
+    app.post('/users', usersController.signUp);
+    app.delete('/sessions', usersController.logout);
   }
 
   if (passportConfig && passportConfig.google) {
@@ -52,5 +51,4 @@ export default (app) => {
     app.put('/project/:id', projectController.update);
     app.delete('/project/:id', projectController.remove);
   }
-
 };
