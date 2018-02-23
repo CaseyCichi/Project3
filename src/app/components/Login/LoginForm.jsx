@@ -1,33 +1,22 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
 import GoogleIcon from 'react-icons/lib/fa/google';
 import { manualLogin, signUp, toggleLoginMode } from '../../../actions/user';
 
-class LoginForm extends React.Component {
+class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-
-    this.state = {
-      username: '',
-      password: '',
-      submitted: false
-    };
-  }
-
-  handleChange(e) {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
   }
 
   handleOnSubmit(event) {
     event.preventDefault();
     const { manualLogin, signUp, user: { isLogin } } = this.props;
-    const { email, password } = this.state;
-
+    const email = ReactDOM.findDOMNode(this.refs.email).value;
+    const password = ReactDOM.findDOMNode(this.refs.password).value;
     if (isLogin) {
       manualLogin({ email, password });
     } else {
@@ -36,7 +25,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    const { isWaiting, message, isLogin } = this.props.user;
+    const { user: { isLogin }, toggleLoginMode } = this.props;
     return (
       <div className="row">
         <div
@@ -45,9 +34,11 @@ class LoginForm extends React.Component {
           <div id="login-logo" className="d-block mr-auto ml-auto mb-5" />
           <button
             type="submit"
-            className="btn btn-primary d-block mr-auto ml-auto">
-            <GoogleIcon width={15} height={15} viewBox={'0 3 43 43'} /> Use
-            Google Account
+            className="btn btn-primary d-block mr-auto ml-auto"
+            onClick={toggleLoginMode}
+            href="/auth/google">
+            <GoogleIcon width={15} height={15} viewBox={'0 3 43 43'} />
+            Use Google Account
           </button>
           <div id="dialog-separator" className="mt-4 mb-4">
             or
@@ -77,13 +68,20 @@ class LoginForm extends React.Component {
             </div>
             <input
               type="submit"
-              value="Login"
+              value={'Login'}
               className="btn btn-primary full-width"
+              onClick={toggleLoginMode}
+              onSubmit={this.handleOnSubmit}
             />
           </form>
           <p id="signup">
-            Don't have an account?
-            <a href="#" data-toggle="modal" data-target="#signup-modal">
+            Don't have an account?{' '}
+            <a
+              href="#"
+              data-toggle="modal"
+              data-target="#signup-modal"
+              onClick={toggleLoginMode}
+              onSubmit={this.handleOnSubmit}>
               Signup
             </a>
           </p>
@@ -100,12 +98,14 @@ LoginForm.propTypes = {
   toggleLoginMode: PropTypes.func.isRequired
 };
 
-function mapStateToProps({ user }) {
-  return { user };
+function mapStateToProps({user}) {
+  return {
+    user
+  };
 }
 
-export default connect(mapStateToProps, {
-  manualLogin,
-  signUp,
-  toggleLoginMode
-})(LoginForm);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ manualLogin, signUp, toggleLoginMode }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
 import Page from '../../components/Page';
-import LoginForm from '../../components/Login'
+import LoginForm from '../../components/Login';
 
 class LoginPage extends Component {
   render() {

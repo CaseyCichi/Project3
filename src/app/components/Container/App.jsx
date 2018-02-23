@@ -1,12 +1,122 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import AddTaskForm from '../AddTaskForm';
+import NewProjectForm from '../NewProjectForm';
+import ProfileSettingsForm from '../ProfileSettingsForm';
+import SignupForm from '../SignupForm';
 import Messages from '../Messages';
 
-const App = ({ children }) => {
+const App = (props) => {
   return (
     <div id="app-content">
-      <Messages />
-      {children}
+      <div
+        className="modal fade"
+        id="add-task-modal"
+        role="dialog"
+        aria-labelledby="addTaskModal"
+        aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <h3 className="modal-title mb-3">New Task</h3>
+              <AddTaskForm {...this.props}/>
+            </div>
+            <div className="modal-footer" />
+          </div>
+        </div>
+      </div>
+
+      {/*New Project Modal*/}
+      <div
+        className="modal fade"
+        id="new-project-modal"
+        role="dialog"
+        aria-labelledby="newProjectModal"
+        aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <h3 className="modal-title mb-3">New Project</h3>
+              <NewProjectForm  {...this.props}/>
+            </div>
+            <div className="modal-footer" />
+          </div>
+        </div>
+      </div>
+
+      {/*Profile Settings Modal*/}
+      <div
+        className="modal fade"
+        id="profile-modal"
+        role="dialog"
+        aria-labelledby="profileModal"
+        aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <h3 className="modal-title mb-3">Profile Settings</h3>
+              <ProfileSettingsForm  {...this.props}/>
+            </div>
+            <div className="modal-footer" />
+          </div>
+        </div>
+      </div>
+
+      {/*Login Page Signup Modal*/}
+      <div
+        className="modal fade"
+        id="signup-modal"
+        role="dialog"
+        aria-labelledby="signupModal"
+        aria-hidden="true">
+        <div
+          className="modal-dialog modal-dialog-centered modal-lg"
+          role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <h3 className="modal-title mb-4">Create An Account</h3>
+              <SignupForm  {...this.props}/>
+            </div>
+            <div className="modal-footer" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

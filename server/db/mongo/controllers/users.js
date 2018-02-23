@@ -37,7 +37,6 @@ export function signUp(req, res, next) {
     email: req.body.email,
     password: req.body.password
   });
-
   User.findOne({ email: req.body.email }, (findErr, existingUser) => {
     if (existingUser) {
       return res.sendStatus(409);

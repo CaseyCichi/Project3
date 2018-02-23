@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
 import { REQ_TYPE } from '../actiontypes';
-import { messages } from './messages';
-import { user } from './user';
+import messages from './messages';
+import user from './user';
 import { notification } from './notification';
 import { comment } from './comment';
 

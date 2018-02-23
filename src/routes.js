@@ -1,9 +1,10 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route, Redirect } from 'react-router';
 import './style.css';
 import App from './app/App';
-import { LoginPage } from './app/pages/LoginPage';
-import { Dashboard } from './app/pages/Dashboard';
+import HomePage from './app/pages/LoginPage';
+import LoginPage from './app/pages/LoginPage';
+import Dashboard from './app/pages/Dashboard';
 
 
 export default (store) => {
@@ -18,16 +19,17 @@ export default (store) => {
     const { user: { authenticated }} = store.getState();
     if (authenticated) {
       replace({
-        pathname: '/dashboard'
+        pathname: '/'
       });
     }
     callback();
   };
   return (
     <Route path="/" component={App}>
+      <Redirect from="/" to="home" />
+      <Route path="home"component={HomePage}/>
       <Route path="login" component={LoginPage} onEnter={redirectAuth} />
       <Route path="dashboard" component={Dashboard} onEnter={requireAuth} />
-      {/* <Route path="about" component={About} /> */}
     </Route>
   );
 };

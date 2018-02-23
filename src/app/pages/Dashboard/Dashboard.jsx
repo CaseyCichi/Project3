@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import SideBar from '../../components/SideBar';
 import MainContent from '../../components/MainContent';
 
 class Dashboard extends Component {
-render() {
+  render() {
     return (
       <div id="whole-page-container" className="wrapper">
-        <div className='row no-gutters'>
+        <div className="row no-gutters">
           <SideBar />
           <MainContent />
         </div>

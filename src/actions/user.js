@@ -1,5 +1,5 @@
 import { push } from 'react-router-redux';
-import { authService } from '../services';
+import { authService }  from '../services';
 import { USER_TYPE } from '../actiontypes';
 
 export function toggleLoginMode() { return { type: USER_TYPE.TOGGLE_LOGIN_MODE } }

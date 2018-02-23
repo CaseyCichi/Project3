@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import { withRouter } from 'react-router';
 import Helmet from 'react-helmet';
 
 const defaultUrl = (process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'null');
@@ -64,4 +62,4 @@ class Page extends Component {
   }
 }
 
-export default withRouter(Page);
+export default Page;

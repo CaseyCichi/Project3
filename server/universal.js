@@ -1,10 +1,8 @@
 import path from 'path';
 import fs from 'fs';
-import { match, RouterContext } from 'react-router';
-
 import renderhtml from './renderhtml';
 import { sessionId } from './config/secrets';
-import createHistory from 'history/createMemoryHistory';
+import { createMemoryHistory, match } from 'react-router';
 import initStore from '../src/utils/initStore';
 import fetchDataForRoute from '../src/utils/fetchData';
 import axios from 'axios';
@@ -14,7 +12,7 @@ import { REQ_TYPE } from '../src/actiontypes';
 export default function render(req, res) {
   const authenticated = req.isAuthenticated();
   const filePath = path.resolve(__dirname, '../public/index.html');
-  const history = createHistory();
+  const history = createMemoryHistory();
   const store = initStore(
     {
       user: {
@@ -46,7 +44,7 @@ export default function render(req, res) {
               console.error('Read error', err);
               return res.status(404).end();
             }
-            const html = renderhtml(req.path, htmlData, props);
+            const html = renderhtml(store, props, htmlData);
             res.status(200).send(html);
           });
         })

@@ -5,10 +5,10 @@ import { RouterContext } from 'react-router';
 import Helmet from 'react-helmet';
 
 const prepHTML = (data, { html, head, body }) => {
-  data = data.replace('<html lang="en">', `<!doctype html><html ${html}`);
+  data = data.replace('<html lang="en">', `<html ${html}`);
   data = data.replace('</head>', `${head}</head>`);
   data = data.replace('<div id="app-content"></div>', `<div id="app-content">${body}</div>`);
-  return data;
+  return body;
 };
 
 const html = (htmlData, helmet) => {
