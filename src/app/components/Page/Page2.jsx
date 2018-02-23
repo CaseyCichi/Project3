@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-const defaultUrl = (process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'null');
+const defaultUrl = (process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : '3002');
 const defaultTitle = 'Owlist';
 const defaultDescription = 'Hooty Hoot';
 const defaultImage = `${defaultUrl}/images/logo.jpg`;

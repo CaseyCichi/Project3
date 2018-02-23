@@ -11,7 +11,7 @@ import { REQ_TYPE } from '../src/actiontypes';
 
 export default function render(req, res) {
   const authenticated = req.isAuthenticated();
-  const filePath = path.resolve(__dirname, '../public/index.html');
+  const filePath = path.resolve(__dirname, '../build/index.html');
   const history = createMemoryHistory();
   const store = initStore(
     {

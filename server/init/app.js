@@ -14,6 +14,8 @@ import { session as dbSession } from '../db';
 
 import index from '../routes/index';
 import api from '../routes/api';
+import universal from '../universal';
+
 
 
 const PORT = process.env.PORT || 3000;
@@ -63,6 +65,7 @@ export default (app) => {
     app.use('/', index);
     app.use(express.static(path.resolve(__dirname, '../build')));
     app.use('/api', api);
+    app.use('/', universal)
 
     app.listen(PORT, () => {
         console.log('--------------------------');
