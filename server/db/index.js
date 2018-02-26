@@ -1,8 +1,11 @@
-import * as mongo from './mongo'
+const mongoose = require('mongoose');
+const keys = require('../config/keys');
 
-let dbConfig = mongo.default
+mongoose.Promise = global.Promise;
+mongoose.connect(keys.mongoURI);
+const db = mongoose.connection
 
-export const connect = dbConfig.connect;
-export const controllers = dbConfig.controllers;
-export const passport = dbConfig.passport;
-export const session = dbConfig.session;
+db.on('error', err => { console.log(`There was an error connecting to the database: ${err}`) })
+db.once('open', () => { console.log(`CONNECTED TO: ${keys.mongoURI}`) })
+
+module.exports = db
