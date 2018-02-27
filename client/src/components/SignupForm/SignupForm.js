@@ -118,4 +118,4 @@ function mapStateToProps({ user }) {
   };
 }
 
-export default connect(mapStateToProps)(SignupForm);
+export default SignupForm;

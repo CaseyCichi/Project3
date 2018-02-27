@@ -9,7 +9,10 @@ import App from './containers/App';
 
 ReactDOM.render(
   <Provider store={store}>
+  <div>
     <App />
+
+</div>
   </Provider>,
   document.getElementById("root")
 );

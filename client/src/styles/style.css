@@ -26,27 +26,6 @@ body, html {
     background: #e6e7e8
 }
 
-.navbar-brand {
-	background: url(./images/owlist-logo.png);
-	background-repeat: no-repeat;
-	width: 100px;
-	height: 24px;
-	margin-top: 22px;
-	margin-bottom: 10px;
-	margin-left: 15px;
-}
-
-#index-header {
-	background: #14c3f4;
-    background: webkit-linear-gradient(legacy-direction(270deg),#14c3f4, #605ca9);
-    background: -o-linear-gradient(#14c3f4, #605ca9); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#14c3f4, #605ca9); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(270deg,#14c3f4, #605ca9);
-	height: 700px;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
-}
-
 /*----------- SITE WIDE STYLES ---------------*/
 
 a {
@@ -75,6 +54,9 @@ h1, h2, h3, h4, h5 {
 .grey-header {
 	color: #bcbec0;
 }
+.purple-header {
+	color: #605ca9;
+}
 
 .section-header {
 	width: 100%;
@@ -98,24 +80,9 @@ h1, h2, h3, h4, h5 {
 	width: 100%;
 	margin-top: 10px;
 }
-/*----------- INDEX NAV --------------*/
 
-.nav-white {
-	background: #fff;
-	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-}
 
-header {
-	padding-top: 60px;
-}
-
-header h1 {
-	font-size: 5.5rem;
-	color: #fff;
-	font-weight: normal;
-}
-
-/*----------- SIDE NAV ---------------*/
+/*----------- DASHBOARD SIDE NAV ---------------*/
 
 
 #side-nav {
@@ -123,23 +90,28 @@ header h1 {
 	height: 100vh;;
 }
 
-ul.nav {
-	width: 100%;
-}
-
-li.nav-item a {
-	color: #bcbec0;
-}
-
-li.nav-item:first-child {
+h6.projects {
+	padding-bottom: 7px;
 	border-bottom: 1px solid #bcbec0;
 }
 
-a.nav-link {
-	padding-left: 0;
+ul.projects-list {
+	list-style: none;
+	padding:0;
 }
 
-/*----------- TOP NAV BAR ---------------*/
+ul.projects-list li a {
+	color: #bcbec0;
+	text-decoration: none;
+}
+
+ul.projects-list li a:hover {
+	color: #14c3f4;
+	text-decoration: none;
+}
+
+
+/*----------- DASHBOARD TOP NAV BAR ---------------*/
 
 #top-nav-bar {
 	background: #fff;
@@ -216,7 +188,147 @@ left: auto;
 	background-color: #14c3f4;
 }
 
-/*----------- LOGIN SPLASH PAGE ----------*/
+#navbarSupportedContent {
+	background: #fff;
+	z-index: 100;
+}
+
+/* ----------------- MODALS -------------------*/
+
+.modal-header {
+	border-bottom: none;
+}
+
+.modal-footer {
+	border-top: none;
+}
+
+#signup-modal .modal-body, #signup-modal .modal-footer  {
+	padding: 1rem 4rem 2rem 4rem;
+}
+
+#add-task-modal .modal-body, #add-task-modal .modal-footer, #new-project-modal .modal-body, #new-project-modal .modal-footer,
+#profile-modal .modal-body, #profile-modal .modal-footer {
+	padding: 0 2rem 2rem 2rem;
+}
+
+ul.modal-list {
+	padding: 0;
+}
+
+ul.modal-list li {
+	list-style: none;
+	width: 49%;
+	float: left;
+}
+
+ul.modal-list li:first-child {
+	margin-right: 8px;
+}
+
+
+/*----------- MAIN DASHBOARD CONTENT ---------------*/
+
+#main-content-left, #main-content-right {
+	background: #fff;
+	border-radius: 5px;
+	margin: 3%;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+	height: 100vh;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.navbar-brand {
+	background: url(./images/owlist-logo.png);
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 24px;
+	margin-bottom: 10px;
+}
+
+#add-task {
+	border-bottom: 1px solid #bcbec0;
+	height: auto;
+}
+
+ul#task-list, ul#notifications-list {
+	margin-left: 0;
+	padding: 1rem;
+}
+
+ul#task-list li, ul#notifications-list li {
+	list-style-type: none;
+	border-bottom: 1px solid #ccc;
+	padding: 0.25rem 0;
+}
+
+ul#task-details {
+	margin-bottom: 0;
+	padding: 0.65rem;
+	display: inline-block;
+}
+
+ul#task-details li {
+	list-style: none;
+	padding: 0.25rem 0.25rem;
+	display: inline-block;
+}
+
+.task-date.form-control {
+	display: inline;
+	width: 175px;
+	margin-left:10px;
+}
+
+.file-chooser { 
+	position: relative; 
+	margin: 0;
+}
+
+.file-chooser:hover {
+	cursor: pointer;
+}
+
+.chooser { 
+	position: absolute; 
+	z-index: 1; 
+	opacity: 0; 
+	cursor: pointer;
+}
+
+#task-pane {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	margin:0;
+}
+
+.task-details-content {
+	height: 413px;
+	overflow: scroll;
+}
+
+.comment-section {
+	position: fixed;
+	height: auto;
+	background-color: #fff;
+	border-top: 1px solid #bcbec0;	
+	width: calc(91.75% * 0.4);
+	bottom: 0;
+}
+
+.task-date::before { 
+	content: attr(data-placeholder);
+	width: 100%;
+}
+
+.task-date:focus::before,
+.task-date:valid::before { 
+	display: none 
+}
+
+/*----------- LOGIN PAGE ----------*/
 
 #splash-page-container {
     background: #14c3f4;
@@ -280,117 +392,83 @@ p#signup a {
 	font-weight: bold;
 }
 
+/*----------- INDEX NAV --------------*/
 
-/* ----------------- MODALS -------------------*/
-
-#signup-modal .modal-header, #add-task-modal .modal-header, #profile-modal .modal-header {
-	border-bottom: none;
+#index-header {
+	background: #14c3f4;
+    background: webkit-linear-gradient(legacy-direction(270deg),#14c3f4, #605ca9);
+    background: -o-linear-gradient(#14c3f4, #605ca9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#14c3f4, #605ca9); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(270deg,#14c3f4, #605ca9);
+	height: 750px;
 }
 
-#signup-modal .modal-body, #signup-modal .modal-footer  {
-	padding: 1rem 4rem 2rem 4rem;
-}
-
-#signup-modal .modal-footer, #add-task-modal .modal-footer, #profile-modal .modal-footer {
-	border-top: none;
-}
-
-#add-task-modal .modal-body, #add-task-modal .modal-footer {
-	padding: 0 2rem 2rem 2rem;
-}
-
-ul.modal-list {
-	padding: 0;
-}
-
-ul.modal-list li {
-	list-style: none;
-	width: 49%;
-	float: left;
-}
-
-ul.modal-list li:first-child {
-	margin-right: 8px;
-}
-
-
-/*----------- MAIN DASHBOARD CONTENT ---------------*/
-
-#main-content-left, #main-content-right {
+.nav-white {
 	background: #fff;
-	border-radius: 5px;
-	margin: 3%;
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
-	height: 100vh;
-	overflow: scroll;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
 }
 
-#main-content-right {
-	position: relative;
+.navbar-brand-2 {
+	background: url(./images/home-nav-logo.png);
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 35px;
 }
 
-#add-task {
-	border-bottom: 1px solid #bcbec0;
-	height: auto;
+header {
+	padding-top: 70px;
 }
 
-ul#task-list {
-	margin-left: 0;
-	padding: 1rem;
+header h1 {
+	font-size: 6rem;
+	color: #fff;
+	font-weight: normal;
+	padding-top: 8.5rem;
+	line-height: 7rem;
 }
 
-ul#task-list li {
-	list-style-type: none;
-	border-bottom: 1px solid #ccc;
-	padding: 0.25rem 0;
+.top-level-home {
+	font-weight: normal;
+	font-size: 3rem;
+	color: #605ca9;
 }
 
-ul#task-details {
-	margin-bottom: 0;
-	padding: 0.65rem;
-	display: inline-block;
+.track-projects {
+	padding: 8rem 0;
 }
 
-ul#task-details li {
-	list-style: none;
-	padding: 0.25rem 0.25rem;
-	display: inline-block;
+.second-level-home {
+	font-weight: normal;
+	line-height: 2rem;
 }
 
-.task-date.form-control {
-	display: inline;
-	width: 175px;
-	margin-left:10px;
+.top-level-home.white, .second-level-home.white {
+	color: #fff;
 }
 
-.file-chooser { 
-	position: relative; 
-	margin: 0;
+.top-level-home.white {
+	font-size: 5rem;
+	padding-top: 10rem;
 }
 
-.file-chooser:hover {
-	cursor: pointer;
+#home-computer {
+    background: #14c3f4;
+    background: webkit-linear-gradient(legacy-direction(270deg),#14c3f4, #605ca9);
+    background: -o-linear-gradient(#14c3f4, #605ca9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#14c3f4, #605ca9); /* For Firefox 3.6 to 15 */
+    background: url(./images/owlist-computer.png) no-repeat center right, linear-gradient(270deg,#14c3f4, #605ca9);
+	height: 750px;
 }
 
-.chooser { 
-	position: absolute; 
-	z-index: 1; 
-	opacity: 0; 
-	cursor: pointer;
-}
-
-.comment-section {
-	display: block;
-	height: 100px;
-	background-color: #ddd;
-	width: 100%;
-	bottom: 0;
+.computer {
+	float: right;
+	padding-top: 5.5rem;
 }
 /*---------------- INDEX FOOTER ---------------------*/
 
 footer {
 	background: #141b26;
-	height: 300px;
+	height: 70px;
 }
 
 
@@ -403,6 +481,11 @@ footer {
     /* Retina-specific stuff here */
 	.navbar-brand {
 	background: url(./images/owlist-logo@2x.png);
+	background-size: 100%;
+    background-repeat: no-repeat;
+	}
+	.navbar-brand-2 {
+	background: url(./images/home-nav-logo@2x.png);
 	background-size: 100%;
     background-repeat: no-repeat;
 	}
@@ -419,6 +502,31 @@ footer {
 	#side-nav {
 		display: none;
 	}
+	ul#top-nav-left li, ul#top-nav-right li {
+		display: block;
+	}
+
+	ul#top-nav-right {
+		float:left;
+	}
+	#whole-page-container {
+		overflow-y: auto;
+	}
+	#main-content-left.col, #main-conent-right.col {
+		flex-basis: 100%;
+	}
+	#main-content-left, #main-content-right {
+	width: 100% !important;
+	height: auto;
+	}
+	#main-content-right {
+		margin-bottom: 1rem;
+		overflow-x: hidden;
+	}
+	.comment-section {
+	position: static;
+	width: 100%;
+	}
 
 }
 
@@ -427,11 +535,29 @@ footer {
 	#side-nav {
 		display: none;
 	}
+	#whole-page-container {
+		overflow-y: auto;
+	}
+	#main-content-left.col, #main-conent-right.col {
+		flex-basis: 100%;
+	}
+	#main-content-left, #main-content-right{
+	width: 100% !important;
+	height: auto;
+	}
+	#main-content-right {
+		margin-bottom: 1rem;
+		overflow-x: hidden;
+	}
+	.comment-section {
+	position: static;
+	width: 100%;
+	}
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) { 
-  
+
 }
 
 /* Large devices (desktops, 992px and up) */
